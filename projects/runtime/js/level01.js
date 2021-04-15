@@ -45,10 +45,16 @@ var level01 = function (window) {
        createSawBlade(2000, 200);
        var bonkZoneSize = 30;
        var damageFromTrain = 30;
-       function train(x, y){
+       function createTrain(x, y){
            var trainHitZone = game.createObstacle(bonkZoneSize, damageFromTrain);
-           var obstacleImage = draw.bitmap("")
-       }
+           var obstacleImage = draw.bitmap("blob:chrome-untrusted://media-app/00f28432-b032-4d86-b676-1653fab9dde8")
+           trainHitZone.addChild(obstacleImage)
+           obstacleImage.x = -25;
+           obstacleImage.y = -25;
+           trainHitZone.x = x;
+           trainHitZone.y = y;
+           game.addGameItem(trainHitZone)
+       } createTrain(960, 280)
         // DO NOT EDIT CODE BELOW HERE
     }
 };
