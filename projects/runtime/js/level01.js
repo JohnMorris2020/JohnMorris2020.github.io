@@ -68,7 +68,7 @@ var level01 = function (window) {
         enemy.x = x;
         enemy.y = y;
         game.addGameItem(enemy);
-        enemy.velocityX = -1;
+        enemy.velocityX = -3;
         enemy.onPlayerCollision = function() {
          console.log('The enemy has hit Halle');
          game.changeIntegrity(-50);
@@ -79,7 +79,27 @@ var level01 = function (window) {
 };
         
         }
+
         createEnemy(1600, 250);
+    createTrain(1200, 280);
+        function createHealth(x, y){
+        var enemy = game.createGameItem('enemy',25);
+        var redSquare = draw.rect(25,25,"green")
+        redSquare.x = -25;
+        redSquare.y = -25;
+        enemy.addChild(redSquare);
+        enemy.x = x;
+        enemy.y = y;
+        game.addGameItem(enemy);
+        enemy.velocityX = -2;
+        enemy.onPlayerCollision = function() {
+         console.log('Halle is healed');
+         game.changeIntegrity(20);
+};     enemy.onProjectileCollision = function(){
+        console.log("Why did you shoot the health?");
+        enemy.fadeOut();
+};
+        }createHealth(1900, 250);
         // DO NOT EDIT CODE BELOW HERE
     }
 };
