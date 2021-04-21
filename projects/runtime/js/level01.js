@@ -95,9 +95,10 @@ var level01 = function (window) {
         enemy.onPlayerCollision = function() {
          console.log('Halle is healed');
          game.changeIntegrity(20);
+         enemy.fadeOut();
 };     enemy.onProjectileCollision = function(){
         console.log("Why did you shoot the health?");
-        enemy.fadeOut();
+        
 };
         }createHealth(1900, 250);
         // DO NOT EDIT CODE BELOW HERE
