@@ -127,7 +127,7 @@ var level01 = function (window) {
         createHealth(3000, 250);
         createEnemy(3600, 250);
         createSawBlade(3200, 200);
-        creatTrain(3500, 250)
+        creatTrain(3500, 250);
         createSawBlade(3700, 250);
         createSawBlade(3900, 200);
         createTrophy(4000, 250);
