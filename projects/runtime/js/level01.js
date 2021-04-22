@@ -100,7 +100,37 @@ var level01 = function (window) {
         console.log("Why did you shoot the health?");
         
 };
-        }createHealth(1900, 250);
+        }
+       function createTrophy(x, y){
+        var enemy = game.createGameItem('enemy',25);
+        var redSquare = draw.bitmap("https://mail.google.com/mail/u/0?ui=2&ik=479ae5b9c4&attid=0.1&permmsgid=msg-a:r-5996309448342779230&th=178fa0dc75bd4104&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ8iZx7a8BQm0CiZRzXxEs3_qg0w-1IjyeTqd1tUDovFhlL9AKvGD6XG8aTD1jwg4tXQpvK6oGIfQqsoDg5dKcDPw3y3nRkhNjZQ1sZezmVa5hG6WPiF6PXLLc0&disp=emb&realattid=ii_knt02d730")
+        redSquare.x = -25;
+        redSquare.y = -25;
+        enemy.addChild(redSquare);
+        enemy.x = x;
+        enemy.y = y;
+        game.addGameItem(enemy);
+        enemy.velocityX = -2;
+        enemy.onPlayerCollision = function() {
+         console.log('You have won');
+         game.changeIntegrity(20);
+         enemy.fadeOut();
+};     enemy.onProjectileCollision = function(){
+        console.log("Why did you shoot the Trophy?");
+        
+};
+        }
+        createHealth(1900, 250);
+        createSawBlade(2200, 300);
+        createSawBlade(2500, 290);
+        createTrain(2800, 300);
+        createHealth(3000, 250);
+        createEnemy(3600, 250);
+        createSawBlade(3200, 200);
+        creatTrain(3500, 250)
+        createSawBlade(3700, 250);
+        createSawBlade(3900, 200);
+        createTrophy(4000, 250);
         // DO NOT EDIT CODE BELOW HERE
     }
 };
